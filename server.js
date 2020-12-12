@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
+const todoRouter = require('./routes/api/todo');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(cors()); // allows all origin to connect and not be blocked by browser
 
 app.use('/api/scores', scoresRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/todos', todoRouter);
 
 const port = process.env.PORT || 3001; //dynamically assign a port when we deploy it 
 	
